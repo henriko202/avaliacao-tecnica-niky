@@ -1,6 +1,6 @@
-import { Atividade } from './atividade'
-import { Instrutor } from './instrutor'
-import { Aluno } from './aluno'
+import { Atividade } from "./atividade";
+import { Instrutor } from "./instrutor";
+import { Aluno } from "./aluno";
 
 export interface TurmaProps {
   id?: number;
@@ -15,45 +15,45 @@ export interface TurmaProps {
 }
 
 export class Turma {
-  private props: TurmaProps
+  private props: TurmaProps;
 
-  constructor (props: TurmaProps) {
-    this.props = props
+  constructor(props: TurmaProps) {
+    this.props = props;
   }
 
-  get id () {
-    return this.props.id
+  get id() {
+    return this.props.id;
   }
 
-  get tipo_atividade () {
-    return this.props.tipo_atividade
+  get tipo_atividade() {
+    return this.props.tipo_atividade;
   }
 
-  get instrutor () {
-    return this.props.instrutor
+  get instrutor() {
+    return this.props.instrutor;
   }
 
-  get monitor () {
-    return this.props.monitor
+  get monitor() {
+    return this.props.monitor;
   }
 
-  get qtde_max_alunos () {
-    return this.props.qtde_max_alunos
+  get qtde_max_alunos() {
+    return this.props.qtde_max_alunos;
   }
 
-  get horario_aula () {
-    return this.props.horario_aula
+  get horario_aula() {
+    return this.props.horario_aula;
   }
 
-  get duracao_aula () {
-    return this.props.duracao_aula
+  get duracao_aula() {
+    return this.props.duracao_aula;
   }
 
-  get data_inicial () {
-    return this.props.data_inicial
+  get data_inicial() {
+    return this.props.data_inicial;
   }
 
-  get data_final () {
-    return this.props.data_final
+  get data_final() {
+    return this.props.data_final;
   }
 }

@@ -1,4 +1,4 @@
-import { PessoaProps } from './pessoa'
+import { PessoaProps } from "./pessoa";
 
 /**
  * Aluno tem data de matrícula, altura e peso
@@ -11,25 +11,25 @@ export interface AlunoProps extends PessoaProps {
 }
 
 export class Aluno {
-  private props: AlunoProps
+  private props: AlunoProps;
 
-  constructor (props: AlunoProps) {
-    this.props = props
+  constructor(props: AlunoProps) {
+    this.props = props;
   }
 
-  get cod_matricula () {
-    return this.props.cod_matricula
+  get cod_matricula() {
+    return this.props.cod_matricula;
   }
 
-  get data_matricula () {
-    return this.props.data_matricula
+  get data_matricula() {
+    return this.props.data_matricula;
   }
 
-  get altura () {
-    return this.props.altura
+  get altura() {
+    return this.props.altura;
   }
 
-  get peso () {
-    return this.props.peso
+  get peso() {
+    return this.props.peso;
   }
 }

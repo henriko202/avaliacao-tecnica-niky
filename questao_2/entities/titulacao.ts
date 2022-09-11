@@ -6,25 +6,25 @@ export interface TitulacaoProps {
 }
 
 export class Titulacao {
-  private props: TitulacaoProps
+  private props: TitulacaoProps;
 
-  constructor (props: TitulacaoProps) {
-    this.props = props
+  constructor(props: TitulacaoProps) {
+    this.props = props;
   }
 
-  get id () {
-    return this.props.id
+  get id() {
+    return this.props.id;
   }
 
-  get instituicao () {
-    return this.props.instituicao
+  get instituicao() {
+    return this.props.instituicao;
   }
 
-  get curso () {
-    return this.props.curso
+  get curso() {
+    return this.props.curso;
   }
 
-  get grau () {
-    return this.props.grau
+  get grau() {
+    return this.props.grau;
   }
 }

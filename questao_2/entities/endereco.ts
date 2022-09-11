@@ -1,8 +1,8 @@
-import { Telefone } from './telefone'
+import { Telefone } from "./telefone";
 
 enum TipoEndereco {
-  RESIDENCIAL = 'Residencial',
-  COMERCIAL = 'Comercial',
+  RESIDENCIAL = "Residencial",
+  COMERCIAL = "Comercial",
 }
 
 export interface EnderecoProps {
@@ -19,53 +19,48 @@ export interface EnderecoProps {
   estado: string;
   cidade: string;
   tipo: TipoEndereco;
-  telefones: Telefone[];
 }
 
 export class Endereco {
-  private props: EnderecoProps
+  private props: EnderecoProps;
 
-  constructor (props: EnderecoProps) {
-    this.props = props
+  constructor(props: EnderecoProps) {
+    this.props = props;
   }
 
-  get id () {
-    return this.props.id
+  get id() {
+    return this.props.id;
   }
 
-  get cep () {
-    return this.props.cep
+  get cep() {
+    return this.props.cep;
   }
 
-  get logradouro () {
-    return this.props.logradouro
+  get logradouro() {
+    return this.props.logradouro;
   }
 
-  get numero () {
-    return this.props.numero
+  get numero() {
+    return this.props.numero;
   }
 
-  get bairro () {
-    return this.props.bairro
+  get bairro() {
+    return this.props.bairro;
   }
 
-  get complemento () {
-    return this.props.complemento
+  get complemento() {
+    return this.props.complemento;
   }
 
-  get estado () {
-    return this.props.estado
+  get estado() {
+    return this.props.estado;
   }
 
-  get cidade () {
-    return this.props.cidade
+  get cidade() {
+    return this.props.cidade;
   }
 
-  get tipo () {
-    return this.props.tipo
-  }
-
-  get telefones () {
-    return this.props.telefones
+  get tipo() {
+    return this.props.tipo;
   }
 }

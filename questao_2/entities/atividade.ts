@@ -4,17 +4,17 @@ export interface AtividadeProps {
 }
 
 export class Atividade {
-  private props: AtividadeProps
+  private props: AtividadeProps;
 
-  constructor (props: AtividadeProps) {
-    this.props = props
+  constructor(props: AtividadeProps) {
+    this.props = props;
   }
 
-  get id () {
-    return this.props.id
+  get id() {
+    return this.props.id;
   }
 
-  get nome () {
-    return this.props.nome
+  get nome() {
+    return this.props.nome;
   }
 }

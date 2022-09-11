@@ -2,8 +2,8 @@
  * Temos dois tipos de pessoas: Aluno e Instrutor
  */
 export enum EnumPessoa {
-  ALUNO = 'Aluno',
-  INSTRUTOR = 'Instrutor',
+  ALUNO = "Aluno",
+  INSTRUTOR = "Instrutor",
 }
 
 /**
@@ -18,25 +18,25 @@ export interface PessoaProps {
 }
 
 export class Pessoa {
-  private props: PessoaProps
+  private props: PessoaProps;
 
-  constructor (props: PessoaProps) {
-    this.props = props
+  constructor(props: PessoaProps) {
+    this.props = props;
   }
 
-  get id () {
-    return this.props.pessoa_id
+  get id() {
+    return this.props.pessoa_id;
   }
 
-  get nome () {
-    return this.props.nome
+  get nome() {
+    return this.props.nome;
   }
 
-  get data_nascimento () {
-    return this.props.data_nascimento
+  get data_nascimento() {
+    return this.props.data_nascimento;
   }
 
-  get tipo () {
-    return this.props.tipo
+  get tipo() {
+    return this.props.tipo;
   }
 }

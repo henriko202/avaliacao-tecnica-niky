@@ -1,4 +1,4 @@
-import { Matricula } from './matricula'
+import { Matricula } from "./matricula";
 
 export interface PresencaProps {
   id?: number;
@@ -8,25 +8,25 @@ export interface PresencaProps {
 }
 
 export class Presenca {
-  private props: PresencaProps
+  private props: PresencaProps;
 
-  constructor (props: PresencaProps) {
-    this.props = props
+  constructor(props: PresencaProps) {
+    this.props = props;
   }
 
-  get id () {
-    return this.props.id
+  get id() {
+    return this.props.id;
   }
 
-  get matricula () {
-    return this.props.matricula
+  get matricula() {
+    return this.props.matricula;
   }
 
-  get data () {
-    return this.props.data
+  get data() {
+    return this.props.data;
   }
 
-  get presente () {
-    return this.props.presente
+  get presente() {
+    return this.props.presente;
   }
 }
