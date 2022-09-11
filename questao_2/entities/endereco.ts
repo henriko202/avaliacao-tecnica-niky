@@ -1,5 +1,3 @@
-import { Telefone } from "./telefone";
-
 enum TipoEndereco {
   RESIDENCIAL = "Residencial",
   COMERCIAL = "Comercial",
