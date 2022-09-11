@@ -1,0 +1,30 @@
+.form-control:focus {
+  box-shadow: none;
+}
+
+.containerConteudo {
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: #eeeeee;
+  height: 100%;
+  padding-top: 30px;
+}
+
+.containerCategoria {
+  padding-right: 30px;
+  padding-left: 0;
+}
+
+.containerResumo {
+  padding: 0;
+}
+
+#sidebar-wrapper {
+  padding: 0;
+}
+
+.textoMaior {
+  font-weight: bold;
+  color: #737c8f;
+  font-size: larger;
+}
