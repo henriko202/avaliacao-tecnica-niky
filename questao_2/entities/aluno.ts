@@ -32,4 +32,8 @@ export class Aluno {
   get peso() {
     return this.props.peso;
   }
+
+  get nome() {
+    return this.props.nome;
+  }
 }
