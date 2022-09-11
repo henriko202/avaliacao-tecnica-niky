@@ -1,5 +1,7 @@
 export interface ITurmaDTO {
   id: number
+  nome: string
+  descricao: string
   tipo_atividade: number
   instrutor: number
   monitor: number

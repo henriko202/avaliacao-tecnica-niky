@@ -4,6 +4,8 @@ import { Aluno } from "./aluno";
 
 export interface TurmaProps {
   id?: number;
+  nome: string;
+  descricao: string;
   tipo_atividade: Atividade;
   instrutor: Instrutor;
   monitor: Aluno;
@@ -55,5 +57,13 @@ export class Turma {
 
   get data_final() {
     return this.props.data_final;
+  }
+
+  get nome() {
+    return this.props.nome;
+  }
+
+  get descricao() {
+    return this.props.descricao;
   }
 }
