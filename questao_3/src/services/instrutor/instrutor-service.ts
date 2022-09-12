@@ -23,7 +23,7 @@ export class InstrutorService {
     throw new Error('Method not implemented.')
   }
 
-  async handleUpdate(instrutor: IInstrutorDTO): Promise<InstrutorResponse> {
+  async handleUpdate(id: number, instrutor: IInstrutorDTO): Promise<InstrutorResponse> {
     throw new Error('Method not implemented.')
   }
 }

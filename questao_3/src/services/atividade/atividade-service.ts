@@ -28,7 +28,7 @@ export class AtividadeService {
     throw new Error('Method not implemented.')
   }
 
-  async handleUpdate(endereco: IEnderecoDTO): Promise<EnderecoResponse> {
+  async handleUpdate(id: number, endereco: IEnderecoDTO): Promise<EnderecoResponse> {
     throw new Error('Method not implemented.')
   }
 }

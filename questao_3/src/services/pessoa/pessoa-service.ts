@@ -23,7 +23,7 @@ export class PessoaService {
     throw new Error('Method not implemented.')
   }
 
-  async handleUpdate(matricula: IMatriculaDTO): Promise<MatriculaResponse> {
+  async handleUpdate(id: number, matricula: IMatriculaDTO): Promise<MatriculaResponse> {
     throw new Error('Method not implemented.')
   }
 }

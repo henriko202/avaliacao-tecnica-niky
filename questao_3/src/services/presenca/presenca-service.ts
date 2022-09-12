@@ -23,7 +23,7 @@ export class PresencaService {
     throw new Error('Method not implemented.')
   }
 
-  async handleUpdate(presenca: IPresencaDTO): Promise<PresencaResponse> {
+  async handleUpdate(id: number, presenca: IPresencaDTO): Promise<PresencaResponse> {
     throw new Error('Method not implemented.')
   }
 }

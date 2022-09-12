@@ -23,7 +23,7 @@ export class TitulacaoService {
     throw new Error('Method not implemented.')
   }
 
-  async handleUpdate(titulacao: ITitulacaoDTO): Promise<TitulacaoResponse> {
+  async handleUpdate(id: number, titulacao: ITitulacaoDTO): Promise<TitulacaoResponse> {
     throw new Error('Method not implemented.')
   }
 }

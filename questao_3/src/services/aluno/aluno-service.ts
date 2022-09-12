@@ -23,7 +23,7 @@ export class AlunoService {
     throw new Error('Method not implemented.')
   }
 
-  async handleUpdate(aluno: IAlunoDTO): Promise<AlunoResponse> {
+  async handleUpdate(id: number, aluno: IAlunoDTO): Promise<AlunoResponse> {
     throw new Error('Method not implemented.')
   }
 }

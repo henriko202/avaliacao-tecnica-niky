@@ -23,7 +23,7 @@ export class TurmaService {
     throw new Error('Method not implemented.')
   }
 
-  async handleUpdate(turma: ITurmaDTO): Promise<TurmaResponse> {
+  async handleUpdate(id: number, turma: ITurmaDTO): Promise<TurmaResponse> {
     throw new Error('Method not implemented.')
   }
 }
