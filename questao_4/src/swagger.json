@@ -1,0 +1,1046 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Documentação da API de Academia de Ginástica",
+    "description": "Essa é a documentação da API de Academia de Ginástica desenvolvida para o teste prático da Niky",
+    "version": "1.0.0",
+    "contact": {
+      "email": "henrikoalberton@gmail.com"
+    }
+  },
+  "paths": {
+    "/atividades": {
+      "post": {
+        "tags": ["Atividade"],
+        "summary": "Cria uma Atividade",
+        "description": "Cria uma Atividade nova",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Atividade"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Atividade criada com sucesso"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Atividade"],
+        "summary": "Lista as Atividades",
+        "description": "Lista todas as Atividades",
+        "responses": {
+          "200": {
+            "description": "Retorna todas as Atividades"
+          }
+        }
+      }
+    },
+    "/atividades/{id}": {
+      "get": {
+        "tags": ["Atividade"],
+        "summary": "Lista uma Atividade",
+        "description": "Lista os detalhes de uma Atividade",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da Atividade",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os detalhes de uma Atividade"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Atividade"],
+        "summary": "Atualiza uma Atividade",
+        "description": "Atualiza os dados de uma Atividade",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da Atividade",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Atividade"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Atividade atualizada com sucesso"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Atividade"],
+        "summary": "Deleta uma Atividade",
+        "description": "Deleta uma Atividade",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da Atividade",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Atividade deletada com sucesso"
+          }
+        }
+      }
+    },
+    "/alunos": {
+      "post": {
+        "tags": ["Alunos"],
+        "summary": "Cria um Aluno",
+        "description": "Cria um novo Aluno",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Aluno"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Atividade criada com sucesso"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Alunos"],
+        "summary": "Lista os Alunos",
+        "description": "Lista todos os Alunos",
+        "responses": {
+          "200": {
+            "description": "Retorna todos os Alunos"
+          }
+        }
+      }
+    },
+    "/alunos/{id}": {
+      "get": {
+        "tags": ["Alunos"],
+        "summary": "Lista um Aluno",
+        "description": "Lista os detalhes de um Aluno",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do Aluno",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os detalhes de um Aluno"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Alunos"],
+        "summary": "Atualiza um Aluno",
+        "description": "Atualiza os dados de um Aluno",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do Aluno",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Aluno"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Aluno atualizado com sucesso"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Alunos"],
+        "summary": "Deleta um Aluno",
+        "description": "Deleta um Aluno",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do Aluno",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Aluno deletado com sucesso"
+          }
+        }
+      }
+    },
+    "/instrutores": {
+      "post": {
+        "tags": ["Instrutores"],
+        "summary": "Cria um Instrutor",
+        "description": "Cria um novo Instrutor",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Instrutor"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Instrutor criado com sucesso"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Instrutores"],
+        "summary": "Lista os Instrutores",
+        "description": "Lista todos os Instrutores",
+        "responses": {
+          "200": {
+            "description": "Retorna todos os Instrutores"
+          }
+        }
+      }
+    },
+    "/instrutores/{id}": {
+      "get": {
+        "tags": ["Instrutores"],
+        "summary": "Lista um Instrutor",
+        "description": "Lista os detalhes de um Instrutor",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do Instrutor",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os detalhes de um Instrutor"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Instrutores"],
+        "summary": "Atualiza um Instrutor",
+        "description": "Atualiza os dados de um Instrutor",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do Instrutor",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Instrutor"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Instrutor atualizado com sucesso"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Instrutores"],
+        "summary": "Deleta um Instrutor",
+        "description": "Deleta um Instrutor",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do Instrutor",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Instrutor deletado com sucesso"
+          }
+        }
+      }
+    },
+    "/enderecos": {
+      "post": {
+        "tags": ["Endereços"],
+        "summary": "Cria um Endereço",
+        "description": "Cria um novo Endereço",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Endereco"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Endereço criado com sucesso"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Endereços"],
+        "summary": "Lista os Endereços",
+        "description": "Lista todos os Endereços",
+        "responses": {
+          "200": {
+            "description": "Retorna todos os Endereços"
+          }
+        }
+      }
+    },
+    "/enderecos/{id}": {
+      "get": {
+        "tags": ["Endereços"],
+        "summary": "Lista um Endereço",
+        "description": "Lista os detalhes de um Endereço",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do Endereço",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os detalhes de um Endereço"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Endereços"],
+        "summary": "Atualiza um Endereço",
+        "description": "Atualiza os dados de um Endereço",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do Endereço",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Endereco"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Endereço atualizado com sucesso"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Endereços"],
+        "summary": "Deleta um Endereço",
+        "description": "Deleta um Endereço",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do Endereço",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Endereço deletado com sucesso"
+          }
+        }
+      }
+    },
+    "/telefones": {
+      "post": {
+        "tags": ["Telefones"],
+        "summary": "Cria um Telefone",
+        "description": "Cria um novo Telefone",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Telefone"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Telefone criado com sucesso"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Telefones"],
+        "summary": "Lista os Telefones",
+        "description": "Lista todos os Telefones",
+        "responses": {
+          "200": {
+            "description": "Retorna todos os Telefones"
+          }
+        }
+      }
+    },
+    "/telefones/{id}": {
+      "get": {
+        "tags": ["Telefones"],
+        "summary": "Lista um Telefone",
+        "description": "Lista os detalhes de um Telefone",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do Telefone",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os detalhes de um Telefone"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Telefones"],
+        "summary": "Atualiza um Telefone",
+        "description": "Atualiza os dados de um Telefone",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do Telefone",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Telefone"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Telefone atualizado com sucesso"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Telefones"],
+        "summary": "Deleta um Telefone",
+        "description": "Deleta um Telefone",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID do Telefone",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Telefone deletado com sucesso"
+          }
+        }
+      }
+    },
+    "/titulacoes": {
+      "post": {
+        "tags": ["Titulações"],
+        "summary": "Cria uma Titulação",
+        "description": "Cria uma nova Titulação",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Titulacao"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Titulação criada com sucesso"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Titulações"],
+        "summary": "Lista as Titulações",
+        "description": "Lista todas as Titulações",
+        "responses": {
+          "200": {
+            "description": "Retorna todas as Titulações"
+          }
+        }
+      }
+    },
+    "/titulacoes/{id}": {
+      "get": {
+        "tags": ["Titulações"],
+        "summary": "Lista uma Titulação",
+        "description": "Lista os detalhes de uma Titulação",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da Titulação",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os detalhes de uma Titulação"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Titulações"],
+        "summary": "Atualiza uma Titulação",
+        "description": "Atualiza os dados de uma Titulação",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da Titulação",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Titulacao"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Titulação atualizada com sucesso"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Titulações"],
+        "summary": "Deleta uma Titulação",
+        "description": "Deleta uma Titulação",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da Titulação",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Titulação deletada com sucesso"
+          }
+        }
+      }
+    },
+    "/turmas": {
+      "post": {
+        "tags": ["Turmas"],
+        "summary": "Cria uma Turma",
+        "description": "Cria uma nova Turma",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Turma"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Turma criada com sucesso"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Turmas"],
+        "summary": "Lista as Turmas",
+        "description": "Lista todas as Turmas",
+        "responses": {
+          "200": {
+            "description": "Retorna todas as Turmas"
+          }
+        }
+      }
+    },
+    "/turmas/{id}": {
+      "get": {
+        "tags": ["Turmas"],
+        "summary": "Lista uma Turma",
+        "description": "Lista os detalhes de uma Turma",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da Turma",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os detalhes de uma Turma"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Turmas"],
+        "summary": "Atualiza uma Turma",
+        "description": "Atualiza os dados de uma Turma",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da Turma",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Turma"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Turma atualizada com sucesso"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Turmas"],
+        "summary": "Deleta uma Turma",
+        "description": "Deleta uma Turma",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da Turma",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Turma deletada com sucesso"
+          }
+        }
+      }
+    },
+    "/matriculas": {
+      "post": {
+        "tags": ["Matrículas"],
+        "summary": "Cria uma Matrícula",
+        "description": "Cria uma nova Matrícula",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Matricula"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Matrícula criada com sucesso"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Matrículas"],
+        "summary": "Lista as Matrículas",
+        "description": "Lista todas as Matrículas",
+        "responses": {
+          "200": {
+            "description": "Retorna todas as Matrículas"
+          }
+        }
+      }
+    },
+    "/matriculas/{id}": {
+      "get": {
+        "tags": ["Matrículas"],
+        "summary": "Lista uma Matrícula",
+        "description": "Lista os detalhes de uma Matrícula",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da Matrícula",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os detalhes de uma Matrícula"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Matrículas"],
+        "summary": "Atualiza uma Matrícula",
+        "description": "Atualiza os dados de uma Matrícula",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da Matrícula",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Matricula"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Matrícula atualizada com sucesso"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Matrículas"],
+        "summary": "Deleta uma Matrícula",
+        "description": "Deleta uma Matrícula",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da Matrícula",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Matrícula deletada com sucesso"
+          }
+        }
+      }
+    },
+    "/presencas": {
+      "post": {
+        "tags": ["Presenças"],
+        "summary": "Cria uma Presença",
+        "description": "Cria uma nova Presença",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Presenca"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Presença criada com sucesso"
+          }
+        }
+      },
+      "get": {
+        "tags": ["Presenças"],
+        "summary": "Lista as Presenças",
+        "description": "Lista todas as Presenças",
+        "responses": {
+          "200": {
+            "description": "Retorna todas as Presenças"
+          }
+        }
+      }
+    },
+    "/presencas/{id}": {
+      "get": {
+        "tags": ["Presenças"],
+        "summary": "Lista uma Presença",
+        "description": "Lista os detalhes de uma Presença",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da Presença",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retorna os detalhes de uma Presença"
+          }
+        }
+      },
+      "put": {
+        "tags": ["Presenças"],
+        "summary": "Atualiza uma Presença",
+        "description": "Atualiza os dados de uma Presença",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da Presença",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/Presenca"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Presença atualizada com sucesso"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Presenças"],
+        "summary": "Deleta uma Presença",
+        "description": "Deleta uma Presença",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID da Presença",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Presença deletada com sucesso"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Aluno": {
+      "type": "object",
+      "properties": {
+        "cod_matricula": { "type": "integer", "example": 1, "required": true },
+        "nome": { "type": "string", "example": "Henriko", "required": true },
+        "data_matricula": { "type": "string", "example": "01/01/2021", "required": true },
+        "data_nascimento": { "type": "string", "example": "20/04/1998", "required": true },
+        "altura": { "type": "string", "example": "1.85", "required": true },
+        "peso": { "type": "string", "example": "110", "required": true }
+      }
+    },
+    "Instrutor": {
+      "type": "object",
+      "properties": {
+        "nome": { "type": "string", "example": "Professor X", "required": true },
+        "rg": { "type": "string", "example": "9.999.999-9", "required": true },
+        "data_nascimento": { "type": "string", "example": "24/12/1984", "required": true }
+      }
+    },
+    "Telefone": {
+      "type": "object",
+      "properties": {
+        "endereco": { "type": "integer", "example": 1, "required": true },
+        "telefone": { "type": "string", "example": "(45) 99103-8178", "required": true },
+        "whatsapp": { "type": "boolean", "example": true, "required": true }
+      }
+    },
+    "Titulacao": {
+      "type": "object",
+      "properties": {
+        "instrutor": { "type": "integer", "example": 1, "required": true },
+        "instituicao": { "type": "string", "example": "Universidade Tecnológica Federal do Paraná", "required": true },
+        "curso": { "type": "string", "example": "Ciência da Computação", "required": true },
+        "grau": { "type": "string", "example": "Bacharelado", "required": true }
+      }
+    },
+    "Endereco": {
+      "type": "object",
+      "properties": {
+        "pessoa": { "type": "integer", "example": 1, "required": true },
+        "cep": { "type": "string", "example": "99999-999", "required": true },
+        "logradouro": { "type": "string", "example": "Rua dos Bobos", "required": true },
+        "numero": { "type": "string", "example": "123" },
+        "bairro": { "type": "string", "example": "Jd Lancaster", "required": true },
+        "complemento": { "type": "string", "example": "Casa 1" },
+        "estado": { "type": "string", "example": "PR", "required": true },
+        "cidade": { "type": "string", "example": "Foz do iguaçu", "required": true },
+        "tipo": { "type": "string", "example": "Residencial", "required": true }
+      }
+    },
+    "Atividade": {
+      "type": "object",
+      "properties": {
+        "nome": { "type": "string", "example": "Musculação", "required": true }
+      }
+    },
+    "Matricula": {
+      "type": "object",
+      "properties": {
+        "aluno": { "type": "number", "example": 1, "required": true },
+        "turma": { "type": "number", "example": 1, "required": true }
+      }
+    },
+    "Presenca": {
+      "type": "object",
+      "properties": {
+        "matricula": { "type": "number", "example": 1, "required": true },
+        "data": { "type": "Date", "example": "11/09/2022", "required": true },
+        "presente": { "type": "boolean", "example": true, "required": true }
+      }
+    },
+    "Turma": {
+      "type": "object",
+      "properties": {
+        "tipo_atividade": { "type": "number", "example": 1, "required": true },
+        "instrutor": { "type": "number", "example": 1, "required": true },
+        "monitor": { "type": "number", "example": 1, "required": true },
+        "qtde_max_alunos": { "type": "number", "example": 10, "required": true },
+        "horario_aula": { "type": "string", "example": "18:30", "required": true },
+        "duracao_aula": { "type": "number", "example": 1.5, "required": true },
+        "data_inicial": { "type": "Date", "example": "01/01/2021", "required": true },
+        "data_final": { "type": "Date", "example": "01/02/2021" },
+        "nome": { "type": "string", "required": true, "example": "Musculação 1" },
+        "descricao": { "type": "string", "required": true, "example": "Musculação para iniciantes" }
+      }
+    }
+  }
+}
