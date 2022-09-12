@@ -24,7 +24,7 @@
     },
     "ecmaVersion": "latest",
     "sourceType": "module",
-    "project": "/questao_8/tsconfig.json"
+    "project": "questao_8/tsconfig.json"
   },
   "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier", "eslint-plugin-import-helpers"],
   "rules": {
