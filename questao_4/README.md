@@ -25,3 +25,7 @@ E finalmente podemos rodar o projeto com o comando `npm run dev`.
 A documentação do backend está disponível em `http://localhost:4000/api-docs`.
 
 Os testes estão disponíveis com o comando `npm run test`.
+
+## Online
+
+O projeto está disponível online em `https://questao-4-niky.up.railway.app/api-docs/`
