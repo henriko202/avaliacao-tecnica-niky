@@ -1,8 +1,9 @@
+import { IInstrutorDTO } from '../dtos/IInstrutorDTO'
 import { Instrutor } from '../entities/instrutor'
 
-export interface InstrutoresRepository {
-  create(instrutor: Instrutor): Promise<Instrutor>
-  save(instrutor: Instrutor): Promise<Instrutor>
+export interface IInstrutoresRepository {
+  create(instrutor: IInstrutorDTO): Promise<Instrutor>
+  save(instrutor: IInstrutorDTO): Promise<Instrutor>
   findById(id: number): Promise<Instrutor | null>
   findAll(): Promise<Instrutor[]>
   delete(id: number): Promise<void>

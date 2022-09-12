@@ -1,8 +1,9 @@
+import { IAtividadeDTO } from '../dtos/IAtividadeDTO'
 import { Atividade } from '../entities/atividade'
 
-export interface AtividadesRepository {
-  create(atividade: Atividade): Promise<Atividade>
-  save(atividade: Atividade): Promise<Atividade>
+export interface IAtividadesRepository {
+  create(atividade: IAtividadeDTO): Promise<Atividade>
+  save(atividade: IAtividadeDTO): Promise<Atividade>
   findById(id: number): Promise<Atividade | null>
   findAll(): Promise<Atividade[]>
   delete(id: number): Promise<void>

@@ -1,12 +1,11 @@
 import { IAlunoDTO } from '../../dtos/IAlunoDTO'
 import { Aluno } from '../../entities/aluno'
-import { EnumPessoa } from '../../entities/pessoa'
-import { AlunosRepository } from '../../repositories/alunos-repository'
+import { IAlunosRepository } from '../../repositories/alunos-repository'
 
 type AlunoResponse = Aluno
 
 export class AlunoService {
-  constructor(private alunosRepository: AlunosRepository) {}
+  constructor(private alunosRepository: IAlunosRepository) {}
 
   async handleCreate(aluno: IAlunoDTO): Promise<AlunoResponse> {
     throw new Error('Method not implemented.')

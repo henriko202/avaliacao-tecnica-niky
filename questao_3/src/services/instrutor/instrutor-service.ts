@@ -1,11 +1,11 @@
 import { IInstrutorDTO } from '../../dtos/IInstrutorDTO'
 import { Instrutor } from '../../entities/instrutor'
-import { InstrutoresRepository } from '../../repositories/instrutor-repository'
+import { IInstrutoresRepository } from '../../repositories/instrutor-repository'
 
 type InstrutorResponse = Instrutor
 
 export class InstrutorService {
-  constructor(private instrutoresRepository: InstrutoresRepository) {}
+  constructor(private instrutoresRepository: IInstrutoresRepository) {}
 
   async handleCreate(instrutor: IInstrutorDTO): Promise<InstrutorResponse> {
     throw new Error('Method not implemented.')

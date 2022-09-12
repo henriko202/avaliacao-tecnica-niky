@@ -1,11 +1,11 @@
 import { IPessoaDTO } from '../../dtos/IPessoaDTO'
 import { Pessoa } from '../../entities/pessoa'
-import { PessoasRepository } from '../../repositories/pessoa-repository'
+import { IPessoasRepository } from '../../repositories/pessoa-repository'
 
 type PessoaResponse = Pessoa
 
 export class MatriculaService {
-  constructor(private pessoasRepository: PessoasRepository) {}
+  constructor(private pessoasRepository: IPessoasRepository) {}
 
   async handleCreate(pessoa: IPessoaDTO): Promise<PessoaResponse> {
     throw new Error('Method not implemented.')

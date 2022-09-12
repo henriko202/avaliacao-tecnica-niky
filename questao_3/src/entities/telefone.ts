@@ -4,6 +4,7 @@ import { Endereco } from './endereco'
  * Telefone vai ter o número e um boolen para saber se é whatsapp ou não
  */
 export interface TelefoneProps {
+  id: number
   endereco: Endereco
   telefone: string
   whatsapp: boolean
@@ -26,5 +27,9 @@ export class Telefone {
 
   get endereco() {
     return this.props.endereco
+  }
+
+  get id() {
+    return this.props.id
   }
 }

@@ -1,11 +1,11 @@
 import { ITitulacaoDTO } from '../../dtos/ITitulacaoDTO'
 import { Titulacao } from '../../entities/titulacao'
-import { TitulacoesRepository } from '../../repositories/titulacao-repository'
+import { ITitulacoesRepository } from '../../repositories/titulacao-repository'
 
 type TitulacaoResponse = Titulacao
 
 export class TitulacaoService {
-  constructor(private titulacoesRepository: TitulacoesRepository) {}
+  constructor(private titulacoesRepository: ITitulacoesRepository) {}
 
   async handleCreate(titulacao: ITitulacaoDTO): Promise<TitulacaoResponse> {
     throw new Error('Method not implemented.')

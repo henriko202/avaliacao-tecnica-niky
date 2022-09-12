@@ -1,11 +1,11 @@
 import { ITurmaDTO } from '../../dtos/ITurmaDTO'
 import { Turma } from '../../entities/turma'
-import { TurmasRepository } from '../../repositories/turma-repository'
+import { ITurmasRepository } from '../../repositories/turma-repository'
 
 type TurmaResponse = Turma
 
 export class TurmaService {
-  constructor(private turmasRepository: TurmasRepository) {}
+  constructor(private turmasRepository: ITurmasRepository) {}
 
   async handleCreate(turma: ITurmaDTO): Promise<TurmaResponse> {
     throw new Error('Method not implemented.')

@@ -1,6 +1,6 @@
 import { IEnderecoDTO } from '../../dtos/IEnderecoDTO'
 import { Endereco } from '../../entities/endereco'
-import { EnderecosRepository } from '../../repositories/endereco-repository'
+import { IEnderecosRepository } from '../../repositories/endereco-repository'
 
 type EnderecoResponse = Endereco
 
@@ -10,7 +10,7 @@ export class AtividadeService {
   //  constructor(enderecosRepository: EnderecosRepository) {
   //    this.enderecosRepository = enderecosRepository
   //  }
-  constructor(private enderecosRepository: EnderecosRepository) {}
+  constructor(private enderecosRepository: IEnderecosRepository) {}
 
   async handleCreate(endereco: IEnderecoDTO): Promise<EnderecoResponse> {
     throw new Error('Method not implemented.')

@@ -1,8 +1,9 @@
+import { IPessoaDTO } from '../dtos/IpessoaDTO'
 import { Pessoa } from '../entities/pessoa'
 
-export interface PessoasRepository {
-  create(pessoa: Pessoa): Promise<Pessoa>
-  save(pessoa: Pessoa): Promise<Pessoa>
+export interface IPessoasRepository {
+  create(pessoa: IPessoaDTO): Promise<Pessoa>
+  save(pessoa: IPessoaDTO): Promise<Pessoa>
   findById(id: number): Promise<Pessoa | null>
   findAll(): Promise<Pessoa[]>
   delete(id: number): Promise<void>

@@ -1,11 +1,11 @@
 import { IPresencaDTO } from '../../dtos/IPresencaDTO'
 import { Presenca } from '../../entities/presenca'
-import { PresencasRepository } from '../../repositories/presenca-repository'
+import { IPresencasRepository } from '../../repositories/presenca-repository'
 
 type PresencaResponse = Presenca
 
 export class PresencaService {
-  constructor(private presencasRepository: PresencasRepository) {}
+  constructor(private presencasRepository: IPresencasRepository) {}
 
   async handleCreate(presenca: IPresencaDTO): Promise<PresencaResponse> {
     throw new Error('Method not implemented.')

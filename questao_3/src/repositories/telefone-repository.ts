@@ -1,9 +1,10 @@
+import { ITelefoneDTO } from '../dtos/ITelefoneDTO'
 import { Telefone } from '../entities/telefone'
 
-export interface TelefonesRepository {
-  create(telefone: Telefone): Promise<Telefone>
-  save(telefone: Telefone): Promise<Telefone>
+export interface ITelefonesRepository {
+  create(telefone: ITelefoneDTO): Promise<Telefone>
+  save(telefone: ITelefoneDTO): Promise<Telefone>
   findById(id: number): Promise<Telefone | null>
   findAll(): Promise<Telefone[]>
-  delete(telefone: string): Promise<void>
+  delete(id: number): Promise<void>
 }

@@ -1,11 +1,11 @@
 import { ITelefoneDTO } from '../../dtos/ITelefoneDTO'
 import { Telefone } from '../../entities/telefone'
-import { TelefonesRepository } from '../../repositories/telefone-repository'
+import { ITelefonesRepository } from '../../repositories/telefone-repository'
 
 type TelefoneResponse = Telefone
 
 export class TelefoneService {
-  constructor(private telefonesRepository: TelefonesRepository) {}
+  constructor(private telefonesRepository: ITelefonesRepository) {}
 
   async handleCreate(telefone: ITelefoneDTO): Promise<TelefoneResponse> {
     throw new Error('Method not implemented.')
