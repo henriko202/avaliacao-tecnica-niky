@@ -1,0 +1,72 @@
+div.header {
+  background-color: #172643;
+  width: 100%;
+  height: 200px;
+}
+
+@media (max-width: 400px) {
+  div.formPesquisar {
+    width: 250px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  div.formPesquisar {
+    width: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  div.formPesquisar {
+    width: 350px;
+  }
+}
+
+input.form-control {
+  background-color: #2a457a;
+  border-color: #2a457a;
+  color: white;
+  box-shadow: none;
+  border: none;
+}
+
+input.form-control:focus {
+  background-color: #2a457a;
+  color: white;
+  box-shadow: none;
+  border: none;
+}
+
+button.botaoPesquisar {
+  color: white;
+  background-color: #2a457a;
+  border: none;
+}
+
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: white !important;
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: white !important;
+  opacity: 1;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: white !important;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white !important;
+}
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white !important;
+}
+
+::placeholder {
+  /* Most modern browsers support this now. */
+  color: white !important;
+}
