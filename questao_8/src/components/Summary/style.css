@@ -1,0 +1,59 @@
+.resumo {
+  background: white;
+  border-radius: 10px;
+  padding: 15px 25px 100px 15px;
+}
+
+.textoGestores {
+  font-weight: bold;
+  color: #63779d;
+  font-size: smaller;
+}
+
+.botaoResumo {
+  background-color: #172643 !important;
+  border-color: #172643 !important;
+  color: white;
+}
+
+div.categoriasResumo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 1px;
+}
+
+div.categoriasResumo > p {
+  margin: 0;
+  width: 100px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+div.categoriasResumo > select {
+  width: 110px;
+  border-radius: 10px;
+}
+
+div.colunasResumo {
+  display: flex;
+  flex-direction: column;
+}
+
+div.colunasResumo > div:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+div.colunasResumo > div:nth-last-child(2) {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-bottom: 15px;
+}
+
+div.colunasResumo > div:nth-last-child(-n + 3) > svg {
+  color: '#334960';
+}
