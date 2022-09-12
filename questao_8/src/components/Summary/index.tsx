@@ -17,7 +17,11 @@ const Header: React.FC<Props> = ({ categorias }) => {
 
       <div className="colunasResumo">
         {categorias.map((categoria, index) => (
-          <div className="categoriasResumo" style={{ background: colors[index], color: 'white' }}>
+          <div
+            key={categoria.categoria}
+            className="categoriasResumo"
+            style={{ background: colors[index], color: 'white' }}
+          >
             <p
               style={{
                 color: index >= 4 ? contrast : 'white',
