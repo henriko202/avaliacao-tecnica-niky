@@ -1,0 +1,136 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model atividades {
+  id     Int      @id @default(autoincrement()) @db.UnsignedInt
+  nome   String   @db.VarChar(255)
+  turmas turmas[]
+}
+
+model instrutores {
+  id         Int          @id @default(autoincrement()) @db.UnsignedInt
+  id_pessoa  Int          @db.UnsignedInt
+  rg         String       @db.VarChar(255)
+  pessoas    pessoas      @relation(fields: [id_pessoa], references: [id], onDelete: Cascade, map: "instrutores_fk_pessoa")
+  titulacoes titulacoes[]
+  turmas     turmas[]
+
+  @@index([id_pessoa], map: "id_pessoa")
+}
+
+model titulacoes {
+  id          Int         @id @default(autoincrement()) @db.UnsignedInt
+  instrutor   Int         @db.UnsignedInt
+  instituicao String      @db.VarChar(255)
+  curso       String      @db.VarChar(255)
+  grau        String      @db.VarChar(255)
+  instrutores instrutores @relation(fields: [instrutor], references: [id], onDelete: Cascade, map: "titulacoes_fk_instrutor")
+
+  @@index([instrutor], map: "instrutor")
+}
+
+model alunos {
+  cod_matricula  Int          @id @default(autoincrement()) @db.UnsignedInt
+  id_pessoa      Int          @db.UnsignedInt
+  data_matricula DateTime     @db.Date
+  altura         Float        @db.Float
+  peso           Float        @db.Float
+  pessoas        pessoas      @relation(fields: [id_pessoa], references: [id], onDelete: Cascade, map: "alunos_fk_pessoa")
+  matriculas     matriculas[]
+  turmas         turmas[]
+
+  @@index([id_pessoa], map: "id_pessoa")
+}
+
+model turmas {
+  id              Int          @id @default(autoincrement()) @db.UnsignedInt
+  nome            String       @db.VarChar(255)
+  descricao       String       @db.VarChar(255)
+  instrutor       Int          @db.UnsignedInt
+  tipo_atividade  Int          @db.UnsignedInt
+  monitor         Int          @db.UnsignedInt
+  qtde_max_alunos Int          @db.UnsignedInt
+  horario_aula    String       @db.VarChar(255)
+  duracao_aula    Float        @db.Float
+  data_inicial    DateTime     @db.Date
+  data_final      DateTime?    @db.Date
+  instrutores     instrutores  @relation(fields: [instrutor], references: [id], onDelete: Cascade, map: "turmas_fk_instrutor")
+  atividades      atividades   @relation(fields: [tipo_atividade], references: [id], onDelete: Cascade, map: "turmas_fk_atividade")
+  alunos          alunos       @relation(fields: [monitor], references: [cod_matricula], onDelete: Cascade, map: "turmas_fk_monitor")
+  matriculas      matriculas[]
+
+  @@index([instrutor], map: "instrutor")
+  @@index([monitor], map: "monitor")
+  @@index([tipo_atividade], map: "tipo_atividade")
+}
+
+model enderecos {
+  id                  Int                   @id @default(autoincrement()) @db.UnsignedInt
+  pessoa              Int                   @db.UnsignedInt
+  cep                 String                @db.VarChar(255)
+  logradouro          String                @db.VarChar(255)
+  numero              String                @db.VarChar(255)
+  bairro              String                @db.VarChar(255)
+  complemento         String                @default("") @db.VarChar(255)
+  estado              String                @db.VarChar(255)
+  cidade              String                @db.VarChar(255)
+  tipo                String                @db.VarChar(255)
+  pessoas             pessoas               @relation(fields: [pessoa], references: [id], onDelete: Cascade, map: "enderecos_fk_pessoa")
+  telefones_enderecos telefones_enderecos[]
+
+  @@index([pessoa], map: "pessoa")
+}
+
+model matriculas {
+  id        Int         @unique @default(autoincrement()) @db.UnsignedInt
+  aluno     Int         @db.UnsignedInt
+  turma     Int         @db.UnsignedInt
+  alunos    alunos      @relation(fields: [aluno], references: [cod_matricula], onDelete: Cascade, map: "matriculas_fk_aluno")
+  turmas    turmas      @relation(fields: [turma], references: [id], onDelete: Cascade, map: "matriculas_fk_turma")
+  presencas presencas[]
+
+  @@id([id, aluno, turma])
+  @@index([aluno], map: "aluno")
+  @@index([turma], map: "turma")
+}
+
+model pessoas {
+  id              Int           @id @default(autoincrement()) @db.UnsignedInt
+  tipo            pessoas_tipo
+  nome            String        @db.VarChar(255)
+  data_nascimento DateTime      @db.Date
+  alunos          alunos[]
+  enderecos       enderecos[]
+  instrutores     instrutores[]
+}
+
+model presencas {
+  id         Int        @id @default(autoincrement()) @db.UnsignedInt
+  matricula  Int        @db.UnsignedInt
+  data       DateTime   @db.Date
+  presente   Boolean
+  matriculas matriculas @relation(fields: [matricula], references: [id], onDelete: Cascade, map: "presencas_fk_matricula")
+
+  @@index([matricula], map: "matricula")
+}
+
+model telefones_enderecos {
+  id        Int       @id @default(autoincrement()) @db.UnsignedInt
+  telefone  String    @db.VarChar(255)
+  endereco  Int       @db.UnsignedInt
+  whatsapp  Boolean
+  enderecos enderecos @relation(fields: [endereco], references: [id], onDelete: Cascade, map: "telefones_enderecos_fk_endereco")
+
+  @@index([endereco], map: "endereco")
+}
+
+enum pessoas_tipo {
+  INSTRUTOR
+  ALUNO
+}
